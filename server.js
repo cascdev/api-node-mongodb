@@ -18,6 +18,8 @@ const AlunoModel = mongoose.model('Aluno', { nome: String, matricula: String })
 const novoAluno = new AlunoModel({ nome: "Alex Barros", matricula: "202002566945" })
 	  
 	  novoAluno.save() // Salva Aluno no banco
+			   .then( _ => console.log("Aluno Salvo com sucesso!")) // Caso dê certo, manda essa mensagem no cosonole
+			   .catch( errors => console.log(errors)) // Caso de erro, manda o objeto
 	  		   
 // Abaixo está a declaração do Servidor - localhost:3000
 const PORTA = 3000
